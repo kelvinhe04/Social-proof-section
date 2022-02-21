@@ -1,0 +1,260 @@
+/* -------------Table of contents----------
+
+1. Typography
+2. Layouts
+3. Image-containers
+4. Buttons
+
+-----------------------------------------*/
+
+/* ================
+      CSS Reset
+    ===============*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body,
+html {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  background-image: url(bg-pattern-top-mobile.svg),
+    url(bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center, bottom -140% center;
+  user-select: none;
+}
+
+/* ================
+      Layouts
+    ===============*/
+section {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+.hero {
+  text-align: center;
+}
+.review {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+.review__container {
+  background-color: var(--Light-Grayish-Magenta);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.8rem 0;
+}
+.comments {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+.comments__container {
+  background-color: var(--Very-Dark-Magenta);
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+}
+.comments__profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.footer {
+  position: relative;
+  top: 3.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+/* ================
+      Typography
+    ===============*/
+.hero__title {
+  color: var(--Very-Dark-Magenta);
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+.hero__desc {
+  color: var(--Dark-Grayish-Magenta);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 3.5rem;
+}
+.review__desc {
+  color: var(--Very-Dark-Magenta);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.review__stars {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+li {
+  width: 15px;
+}
+.comments__title {
+  color: var(--White);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.comments__subtitle {
+  color: var(--Soft-Pink);
+  font-size: 0.8rem;
+}
+.comments__desc {
+  color: var(--White);
+  font-size: 0.8rem;
+}
+p {
+  line-height: 1.7;
+  font-weight: 400;
+}
+.footer__desc {
+  color: var(--Very-Dark-Magenta);
+}
+
+.footer__desc a,
+p {
+  font-size: 0.8rem;
+}
+
+/* ================
+       Image-containers
+    ===============*/
+.profile {
+  width: 40px;
+}
+.profile img {
+  border-radius: 50%;
+}
+/* ================
+      Buttons
+    ===============*/
+
+.footer__desc a {
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--Very-Dark-Magenta);
+  display: inline-block;
+  border-radius: 10px;
+  color: var(--White);
+  margin-bottom: 0.5rem;
+  transition: all ease-in-out 500ms;
+}
+.footer__desc a:hover {
+  opacity: 0.75;
+}
+
+@media (min-width: 1000px) {
+  body,
+  html {
+    background-image: url(bg-pattern-top-desktop.svg),
+      url(bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left 2rem, bottom left 30rem;
+    display: grid;
+    place-content: center;
+    font-size: 17px;
+    overflow: hidden;
+  }
+  /* ================
+      Layouts
+    ===============*/
+  .first__section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comments {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 6rem;
+    gap: 2rem;
+    grid-template-rows: none;
+  }
+  .hero {
+    text-align: left;
+    width: 70%;
+  }
+  .comments__container-2 {
+    position: relative;
+    bottom: 1.5rem;
+  }
+  .comments__container-1 {
+    position: relative;
+    bottom: 3rem;
+  }
+  .review {
+    margin-left: auto;
+    width: 70%;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .review__stars {
+    margin: 0;
+  }
+  .review__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-right: auto;
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .review__container-2 {
+    position: relative;
+    right: 4rem;
+  }
+  .review__container-1 {
+    position: relative;
+    right: 8rem;
+  }
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  /* ================
+     Typography
+    ===============*/
+  .hero__title {
+    font-size: 3rem;
+  }
+  .hero__desc {
+    margin-bottom: 0;
+  }
+  /* ================
+       Image-containers
+    ===============*/
+
+  li {
+    width: 20px;
+  }
+}
